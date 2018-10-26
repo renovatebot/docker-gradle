@@ -13,4 +13,5 @@ ENV PATH=$PATH:/opt/gradle/gradle-$GRADLE_VERSION/bin
 
 USER ubuntu
 
+COPY settings.xml /home/ubuntu/.m2/settings.xml
 RUN gradle --version
