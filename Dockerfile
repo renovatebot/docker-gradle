@@ -15,4 +15,5 @@ USER ubuntu
 
 COPY --chown=ubuntu:ubuntu settings.xml /home/ubuntu/.m2/settings.xml
 COPY --chown=ubuntu:ubuntu gradle.properties /home/ubuntu/.gradle/gradle.properties
+COPY settings.xml /home/ubuntu/.m2/settings.xml
 RUN gradle --version
