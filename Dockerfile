@@ -2,7 +2,7 @@ FROM renovate/java
 
 USER root
 
-ENV GRADLE_VERSION=4.10.2
+ENV GRADLE_VERSION=5.0
 
 RUN	mkdir /opt/gradle && \
     curl -sL -o /tmp/gradle.zip https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
