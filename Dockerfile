@@ -1,4 +1,4 @@
-FROM renovate/java@sha256:ca943edb4226bd8a9c6c1abd3cd17e2d5aeb3752afd50e43fead55957ba0c4f9
+FROM renovate/java@sha256:beb9cd784f3bbe0cc90dc0f8a220a8cdd4dd7deebbc7d5153f23a9f3c023abad
 
 USER root
 
