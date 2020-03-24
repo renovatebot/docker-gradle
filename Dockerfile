@@ -2,6 +2,7 @@ FROM renovate/java@sha256:877b66638020c519f92719143fcfa58c062cc4cff5839ae746f400
 
 USER root
 
+# renovate: datasource=gradle-version depName=gradle versioning=maven
 ENV GRADLE_VERSION=5.6.4
 
 RUN	mkdir /opt/gradle && \
@@ -11,9 +12,10 @@ RUN	mkdir /opt/gradle && \
 
 ENV PATH=$PATH:/opt/gradle/gradle-$GRADLE_VERSION/bin
 
-USER ubuntu
 
-COPY --chown=ubuntu:ubuntu settings.xml /home/ubuntu/.m2/settings.xml
-COPY --chown=ubuntu:ubuntu gradle.properties /home/ubuntu/.gradle/gradle.properties
-COPY settings.xml /home/ubuntu/.m2/settings.xml
+COPY --chown=ubuntu:0 settings.xml /home/ubuntu/.m2/settings.xml
+COPY --chown=ubuntu:0 gradle.properties /home/ubuntu/.gradle/gradle.properties
+
+USER 1000
+
 RUN gradle --version
