@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: github-cleanup
-        uses: renovatebot/gh-action@v0
+        uses: renovatebot/internal-tools@v0
         continue-on-error: true
         with:
           command: github-cleanup
@@ -56,7 +56,7 @@ jobs:
 
       - name: prepare version
         run: |
-          VERSION=$(cat Dockerfile | grep GRADLE_VERSION)
+          VERSION=$(cat Dockerfile | grep -m1 'ARG GRADLE_VERSION')
           SEMVER_REGEX="(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)"
           if ! [[ "$VERSION" =~ $SEMVER_REGEX ]]; then
             echo Not a semver tag - skipping
@@ -79,7 +79,7 @@ jobs:
         run: docker run --rm -t ${DOCKER_REPO} gradle --version
 
       - name: Publish
-        uses: renovatebot/gh-action@v0
+        uses: renovatebot/internal-tools@v0
         with:
           command: "docker-publish"
           image: ${{ env.DOCKER_REPO }}
