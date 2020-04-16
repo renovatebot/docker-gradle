@@ -10,6 +10,19 @@ env:
   FORCE_COLOR: true
 
 jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: github-cleanup
+        uses: renovatebot/gh-action@v0
+        continue-on-error: true
+        with:
+          command: github-cleanup
+          token: ${{ secrets.GH_TOKEN }}
+          dry-run: ${{github.ref == 'refs/heads/master'}}
+
   build:
     runs-on: ubuntu-latest
 
@@ -67,7 +80,7 @@ jobs:
       - name: Publish
         uses: renovatebot/gh-action@v0
         with:
-          command: "publish-docker"
+          command: "docker-publish"
           image: ${{ env.DOCKER_REPO }}
           tags: latest;${{ env.VERSION }}
           dry-run: ${{github.ref != 'refs/heads/master'}}
