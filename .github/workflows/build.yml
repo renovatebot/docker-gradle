@@ -85,10 +85,3 @@ jobs:
           image: ${{ env.DOCKER_REPO }}
           tags: latest;${{ env.VERSION }}
           dry-run: ${{github.ref != 'refs/heads/master'}}
-
-  release:
-    needs: [build]
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - run: echo "Release"
