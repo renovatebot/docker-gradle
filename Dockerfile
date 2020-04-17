@@ -1,10 +1,15 @@
-FROM renovate/buildpack@sha256:f578b330f5f5c65d63de1d09d2e22f4a8cdaff18e91fe76e8fe89c4ed70f0a32
+FROM renovate/java:8@sha256:bb285456ecc9342c947c1e992e8aa9303e0495b59deb2d41a0235ca96e51979d
 
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
 ARG GRADLE_VERSION=5.6.4
 
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-gradle" \
       org.opencontainers.image.version="${GRADLE_VERSION}"
+
+
+# required by installer
+# renovate: datasource=docker depName=renovate/java versioning=docker
+ARG JAVA_VERSION=8
 
 RUN /usr/local/build/gradle.sh
 
