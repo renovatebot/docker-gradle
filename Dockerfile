@@ -1,5 +1,7 @@
 FROM renovate/java:8@sha256:bb285456ecc9342c947c1e992e8aa9303e0495b59deb2d41a0235ca96e51979d
 
+USER root
+
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
 ARG GRADLE_VERSION=5.6.4
 
