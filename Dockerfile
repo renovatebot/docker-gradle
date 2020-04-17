@@ -1,19 +1,14 @@
-FROM renovate/java@sha256:877b66638020c519f92719143fcfa58c062cc4cff5839ae746f4001f2d5a5ff7
+FROM renovate/buildpack@sha256:f578b330f5f5c65d63de1d09d2e22f4a8cdaff18e91fe76e8fe89c4ed70f0a32
 
-USER root
+# renovate: datasource=gradle-version depName=gradle versioning=gradle
+ARG GRADLE_VERSION=5.6.4
 
-ENV GRADLE_VERSION=5.6.4
+LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-gradle" \
+      org.opencontainers.image.version="${GRADLE_VERSION}"
 
-RUN	mkdir /opt/gradle && \
-    curl -sL -o /tmp/gradle.zip https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
-    unzip -d /opt/gradle /tmp/gradle.zip && \
-	  rm /tmp/gradle.zip
+RUN /usr/local/build/gradle.sh
 
-ENV PATH=$PATH:/opt/gradle/gradle-$GRADLE_VERSION/bin
+COPY --chown=ubuntu:0 settings.xml /home/ubuntu/.m2/settings.xml
+COPY --chown=ubuntu:0 gradle.properties /home/ubuntu/.gradle/gradle.properties
 
-USER ubuntu
-
-COPY --chown=ubuntu:ubuntu settings.xml /home/ubuntu/.m2/settings.xml
-COPY --chown=ubuntu:ubuntu gradle.properties /home/ubuntu/.gradle/gradle.properties
-COPY settings.xml /home/ubuntu/.m2/settings.xml
-RUN gradle --version
+USER 1000
