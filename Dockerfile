@@ -1,4 +1,4 @@
-FROM renovate/buildpack@sha256:d1b69a01a9bf536480a1fbfee979f5718edecc91d8e411bcd47bd9f6156844a9
+FROM renovate/buildpack@sha256:15f9ea4d553c535d050599f6ca7366dda938c742fe20c8f529fd94b6fa02af86
 
 # renovate: datasource=gradle-version depName=gradle versioning=maven
 ARG GRADLE_VERSION=5.6.4

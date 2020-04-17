@@ -1,0 +1,7 @@
+{
+  "datasource": "gradle-version",
+  "versioning": "maven",
+  "image": "gradle",
+  "startVersion": "5.6.4",
+  "cache": "docker-build-cache"
+}
