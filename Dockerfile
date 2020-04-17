@@ -1,6 +1,6 @@
 FROM renovate/buildpack@sha256:f578b330f5f5c65d63de1d09d2e22f4a8cdaff18e91fe76e8fe89c4ed70f0a32
 
-# renovate: datasource=gradle-version depName=gradle versioning=maven
+# renovate: datasource=gradle-version depName=gradle versioning=gradle
 ARG GRADLE_VERSION=5.6.4
 
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-gradle" \
