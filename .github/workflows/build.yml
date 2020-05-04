@@ -48,5 +48,4 @@ jobs:
         uses: renovatebot/internal-tools@v0
         with:
           command: "docker-builder"
-          last-only: true
           dry-run: ${{github.ref != 'refs/heads/master'}}
