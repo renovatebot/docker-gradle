@@ -1,5 +1,5 @@
 {
   "image": "gradle",
-  "startVersion": "5.6.4",
+  "startVersion": "5.0",
   "cache": "docker-build-cache"
 }
