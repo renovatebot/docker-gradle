@@ -4,7 +4,7 @@ ARG GRADLE_VERSION=5.6.4
 FROM renovate/buildpack:2-java@sha256:dcb22a9ffcbf406e4dc6f6a8c1978ff6f6d9db3271d65d3a1ddafe95e1e2d81d
 
 # renovate: datasource=docker depName=openjdk versioning=docker
-ARG JAVA_VERSION=11
+ARG JAVA_VERSION=8
 RUN install-tool java
 
 ARG GRADLE_VERSION
