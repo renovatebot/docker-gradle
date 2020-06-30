@@ -1,5 +1,5 @@
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
-ARG GRADLE_VERSION=6.5
+ARG GRADLE_VERSION=6.5.1
 
 FROM renovate/buildpack:2-java@sha256:3c30b8acca40c64b66a98a1633464081c59d10358ce3c0fe96091105ed8bf37a
 
