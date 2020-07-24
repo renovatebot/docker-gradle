@@ -1,7 +1,7 @@
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
 ARG GRADLE_VERSION=6.5.1
 
-FROM renovate/buildpack:2-java@sha256:abf8cd139216daea3137dbe47b84aacb31dbb504fc590ab8cfedbc5904cd5ca2
+FROM renovate/buildpack:2-java@sha256:04473b106c3c23a092519682636b3f576e4f49490023a4bf0a427f4eba6b183a
 
 # renovate: datasource=docker depName=openjdk versioning=docker
 ARG JAVA_VERSION=11
