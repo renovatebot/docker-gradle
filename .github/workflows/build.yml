@@ -9,9 +9,8 @@ on:
   pull_request:
 
 env:
-  DRY_RUN: ${{ github.ref != 'refs/heads/master' }}
   # https://github.com/chalk/supports-color/issues/106
-  FORCE_COLOR: true
+#  FORCE_COLOR: true
 
 jobs:
   build:
@@ -23,7 +22,6 @@ jobs:
 
     env:
       FLAVOR: ${{ matrix.flavor }}
-      FLAVOR_TAG: ${{ matrix.flavor }}
 
     steps:
       - uses: actions/checkout@v2.3.4
@@ -37,5 +35,5 @@ jobs:
         with:
           command: docker-builder
           build-args: FLAVOR
-          tag-suffix: ${{ env.FLAVOR_TAG }}
-          dry-run: ${{ env.DRY_RUN }}
+          tag-suffix: ${{ env.FLAVOR }}
+          dry-run: ${{ github.ref != 'refs/heads/master' }}
