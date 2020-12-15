@@ -11,7 +11,7 @@ ARG FLAVOR=latest
 ARG GRADLE_VERSION=6.7.1
 
 FROM renovate/buildpack:2-java@sha256:5c5ef8f79790b9c51968a18e6c041ea17ea72fa45945c156e009b67212f19c9d as base-latest
-FROM renovate/buildpack:2-java-bionic@sha256:a587f10be454f03d208c4535358f572b7deac5f6aa7a0b471320c5797b7ddaf8 as base-bionic
+FROM renovate/buildpack:2-java-bionic@sha256:4e9aa763c6968084b6a429a52ab058bb099ae84f48e66fd339898db0aad0d1d8 as base-bionic
 FROM renovate/buildpack:2-java-focal@sha256:f1a9d70a1ad4468d4e0b5257bf52d0a89997468671f2d1cfb2f4ec4d80579598 as base-focal
 
 #--------------------------------------
