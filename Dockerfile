@@ -27,9 +27,6 @@ ARG GRADLE_VERSION
 RUN install-tool gradle
 
 LABEL org.opencontainers.image.source="https://github.com/renovatebot/docker-gradle" \
-      org.opencontainers.image.version="${GRADLE_VERSION}"
-
-COPY --chown=ubuntu:0 settings.xml /home/ubuntu/.m2/settings.xml
-COPY --chown=ubuntu:0 gradle.properties /home/ubuntu/.gradle/gradle.properties
+  org.opencontainers.image.version="${GRADLE_VERSION}"
 
 USER 1000
