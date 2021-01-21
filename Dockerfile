@@ -10,9 +10,9 @@ ARG FLAVOR=latest
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
 ARG GRADLE_VERSION=6.8
 
-FROM renovate/buildpack:2-java@sha256:83242f6830148226d7767fcc3e64da365a5eb96b42a0b4f2e2c981d5968232d3 as base-latest
-FROM renovate/buildpack:2-java-bionic@sha256:3a0cbf03144806d8dcc13c626a0a6b50e06738ca33cb1d0f7053cb9b9738a007 as base-bionic
-FROM renovate/buildpack:2-java-focal@sha256:3d9ae715feceba88809299fe11bdbc720886c646d6ca6a4b2300d1f03b193e67 as base-focal
+FROM renovate/buildpack:2-java@sha256:80829e417216bc5c567d4588373c7d7668b8321283682acccfafa86082780c04 as base-latest
+FROM renovate/buildpack:2-java-bionic@sha256:95e2a2154f8f649e7c74c240936a8565043831dfea950e3d16fbdbde1b6dc3e7 as base-bionic
+FROM renovate/buildpack:2-java-focal@sha256:6f2e46d076bf45c07c841f13a7f72a3153310471f5d08604a5a7b9fd3338c91d as base-focal
 
 #--------------------------------------
 # Image: final
