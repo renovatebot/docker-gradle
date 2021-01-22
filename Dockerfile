@@ -8,7 +8,7 @@ ARG FLAVOR=latest
 #--------------------------------------
 
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
-ARG GRADLE_VERSION=6.8
+ARG GRADLE_VERSION=6.8.1
 
 FROM renovate/buildpack:2-java@sha256:80829e417216bc5c567d4588373c7d7668b8321283682acccfafa86082780c04 as base-latest
 FROM renovate/buildpack:2-java-bionic@sha256:95e2a2154f8f649e7c74c240936a8565043831dfea950e3d16fbdbde1b6dc3e7 as base-bionic
