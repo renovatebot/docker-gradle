@@ -2,7 +2,7 @@
 ARG JAVA_VERSION=11
 
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
-ARG GRADLE_VERSION=6.8.3
+ARG GRADLE_VERSION=6.9
 
 
 #--------------------------------------
