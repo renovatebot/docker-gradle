@@ -8,7 +8,7 @@ ARG GRADLE_VERSION=6.9
 #--------------------------------------
 # Image: final
 #--------------------------------------
-FROM renovate/buildpack:5-java@sha256:289ebcee81f7325b5a4ab73c3dece8440a64d64495537cad49872938b57b3c86
+FROM renovate/buildpack:5-java@sha256:11e8ed390cc3db88b8c9cb12773e53d75daeb316459da6a9fb4ecfa1a75d7921
 
 ARG JAVA_VERSION
 RUN install-tool java
