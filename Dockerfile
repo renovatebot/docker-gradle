@@ -1,5 +1,5 @@
-# renovate: datasource=docker depName=openjdk versioning=docker
-ARG JAVA_VERSION=11
+# renovate: datasource=adoptium-java depName=openjdk
+ARG JAVA_VERSION=11.0.12+7
 
 # renovate: datasource=gradle-version depName=gradle versioning=gradle
 ARG GRADLE_VERSION=6.9
