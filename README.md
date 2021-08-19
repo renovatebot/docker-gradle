@@ -8,4 +8,4 @@ This repository is the source for the Docker Hub image `renovate/gradle`. Commit
 
 ## Deprecation notice
 
-This image and repo will be archived when renovatebot/renovate#11316 is live in app
+This image and repo will be archived when [v26.2.0](https://github.com/renovatebot/renovate/releases/tag/26.2.0) is live in app
